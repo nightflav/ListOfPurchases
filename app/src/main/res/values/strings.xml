@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">List Of Purchases</string>
+    <string name="nightflav">nightflav</string>
+    <string name="shopping_list">shopping list</string>
+    <string name="next_entry_screen">Next</string>
+    <string name="entry_first_screen">Don’t need to memorise anymore</string>
+    <string name="entry_second_screen">Easy to use</string>
+    <string name="third_entry_screen">Makes your life easier</string>
+    <string name="single_item_default_title">Title</string>
+    <string name="single_item_default_category">Category</string>
+    <string name="add_one_item_description">Add One Item</string>
+    <string name="amount_description">You have $v of $i</string>
+    <string name="delete_icon_description">Delete An Item</string>
+    <string name="remove_one_item_descriprtion">Remove One Item</string>
+    <string name="single_item_amount_default_value">0</string>
+    <string name="main_title">Shopping List</string>
+    <string name="bottom_nav_menu_shopping_bag_icon">Shopping List</string>
+    <string name="statistics_bot_nav_menu">Statistics</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="statistics_filling_text">Some Stats Here</string>
+</resources>

@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ListOfPurchases" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primaryC</item>
+        <item name="colorPrimaryVariant">@color/primaryDarkC</item>
+        <item name="colorOnPrimary">@color/textOnPrimary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondaryC</item>
+        <item name="colorSecondaryVariant">@color/secondaryDarkC</item>
+        <item name="colorOnSecondary">@color/textOnSecondary</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+
+<!--        &lt;!&ndash; enable window content transitions &ndash;&gt;-->
+<!--        <item name="android:windowActivityTransitions">true</item>-->
+
+<!--        &lt;!&ndash; specify enter and exit transitions &ndash;&gt;-->
+<!--        <item name="android:windowEnterTransition">@transition/shade_transition</item>-->
+<!--        <item name="android:windowExitTransition">@transition/shade_transition</item>-->
+
+    </style>
+</resources>

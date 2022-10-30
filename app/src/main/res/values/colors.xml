@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryC">#43bcae</color>
+    <color name="primaryLightC">#7befe0</color>
+    <color name="primaryDarkC">#008b7f</color>
+    <color name="secondaryC">#d1c0c0</color>
+    <color name="secondaryLightC">#fff5f5</color>
+    <color name="secondaryDarkC">#a19292</color>
+    <color name="textOnPrimary">#ffffff</color>
+    <color name="textOnSecondary">#000000</color>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/list_of_purchases"
+        android:title="@string/bottom_nav_menu_shopping_bag_icon"
+        android:icon="@drawable/shopping_bag_icon"
+        />
+
+    <item
+        android:id="@+id/statistic"
+        android:title="@string/statistics_bot_nav_menu"
+        android:icon="@drawable/statictic_icon"
+        />
+</menu>
