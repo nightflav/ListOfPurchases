@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.nightflav.listofpurchases.databinding.SingeItemLayoutBinding
 import com.nightflav.listofpurchases.model.Item
+import com.nightflav.listofpurchases.model.ItemData
 
 interface UserActionListener {
     fun addOneItem(id: String)
@@ -13,7 +14,6 @@ interface UserActionListener {
     fun removeOneItem(id: String)
 
     fun deleteItem(id: String)
-
 }
 
 class ItemListAdapter(
@@ -29,6 +29,8 @@ class ItemListAdapter(
             field = value
             notifyDataSetChanged()
         }
+
+    private val itemData = ItemData()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemsViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -78,5 +80,12 @@ class ItemListAdapter(
                 notifyItemRemoved(items.indexOf(item))
             }
         }
+    }
+
+    fun addItem(item: Item) {
+        val newItems = items.toMutableList()
+        newItems.add(item)
+        items = newItems.toList()
+        notifyItemInserted(items.size)
     }
 }

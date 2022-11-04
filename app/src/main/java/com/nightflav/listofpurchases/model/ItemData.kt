@@ -3,7 +3,7 @@ package com.nightflav.listofpurchases.model
 typealias itemListener = (items: List<Item>) -> Unit
 
 class ItemData {
-    private val itemList = mutableListOf<Item>(Item(
+    private var itemList = mutableListOf<Item>(Item(
         "Food",
         "Carrot",
         2,

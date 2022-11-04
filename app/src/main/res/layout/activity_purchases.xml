@@ -6,25 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".PurchasesActivity">
 
-    <TextView
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/navigation_up"
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:background="@drawable/round_bottom_shape"
-        android:gravity="center"
-        android:text="@string/main_title"
-        android:textColor="@color/textOnPrimary"
-        android:fontFamily="@font/inter_regular"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_item_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="570dp"
         android:layout_margin="8dp"
         app:layout_constraintBottom_toTopOf="@+id/navigation_bottom"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,14 +19,47 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation_bottom"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:background="@drawable/round_top_shape"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
-        android:background="@drawable/round_top_shape"
-        app:menu="@menu/bottom_navigation_menu"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_navigation_menu" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fb_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="68dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/add_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+    android:id="@+id/navigation_up"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:background="@drawable/round_bottom_shape"
+    android:fontFamily="@font/inter_regular"
+    android:gravity="center"
+    android:text="@string/main_title"
+    android:textColor="@color/textOnPrimary"
+    android:textSize="20sp"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset Start Screen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

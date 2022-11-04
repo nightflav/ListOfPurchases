@@ -1,9 +1,14 @@
 package com.nightflav.listofpurchases
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
+import android.media.RingtoneManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.result.contract.ActivityResultContract
 import com.nightflav.listofpurchases.databinding.ActivityStatisticsBinding
+import com.nightflav.listofpurchases.model.Item
 
 class StatisticsActivity : AppCompatActivity() {
 
@@ -17,8 +22,6 @@ class StatisticsActivity : AppCompatActivity() {
 
         //bottom navigation menu implementation
         binding.navigationBottom.selectedItemId = R.id.statistic;
-
-        // Perform item selected listener
         binding.navigationBottom.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.statistic -> return@setOnItemSelectedListener true
@@ -30,5 +33,13 @@ class StatisticsActivity : AppCompatActivity() {
             }
             false
         }
+
+        //stats
+        binding.tvAmountOfItemsTitle.text = intent.getStringExtra(EXTRA_STATISCTICS_KEY)
+    }
+
+    companion object {
+        @JvmStatic
+        val EXTRA_STATISCTICS_KEY = "Statistics Key"
     }
 }

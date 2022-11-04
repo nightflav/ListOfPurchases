@@ -1,15 +1,27 @@
 package com.nightflav.listofpurchases
 
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
+import android.view.Window
+import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.nightflav.listofpurchases.databinding.ActivityPurchasesBinding
+import com.nightflav.listofpurchases.databinding.FragmentAddItemDialogBinding
+import com.nightflav.listofpurchases.model.Item
 import com.nightflav.listofpurchases.model.ItemData
 import com.nightflav.listofpurchases.model.itemListener
 
+
 class PurchasesActivity : AppCompatActivity() {
+
+    private var currentId = 0
 
     private lateinit var binding: ActivityPurchasesBinding
 
@@ -47,13 +59,13 @@ class PurchasesActivity : AppCompatActivity() {
         itemsService.addListener(itemListener)
 
         // bottom menu navigation
-
         binding.navigationBottom.selectedItemId = R.id.list_of_purchases;
         binding.navigationBottom.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.list_of_purchases -> return@setOnItemSelectedListener true
                 R.id.statistic -> {
                     val intent = Intent(this, StatisticsActivity::class.java)
+                        .putExtra(EXTRA_STATISCTICS_KEY, adapter.items.size.toString())
                     startActivity(intent)
                     overridePendingTransition(0, 0)
                     return@setOnItemSelectedListener true
@@ -61,6 +73,39 @@ class PurchasesActivity : AppCompatActivity() {
             }
             false
         }
+
+        //add button implementation
+        binding.fbAdd.setOnClickListener {
+            addItem()
+        }
+
+        //make start screen again
+        binding.button.setOnClickListener { makeLikeFirstTimeOpenAgain() }
+    }
+
+    private fun addItem() {
+        val dialog = Dialog(this)
+        val dialogBinding = FragmentAddItemDialogBinding.inflate(layoutInflater)
+        dialogBinding.btnAdd.setOnClickListener {
+            val newItem = Item("CategoryType", dialogBinding.etInputTitle.text.toString(),
+            dialogBinding.etInputAmount.text.toString().toInt(), currentId.toString())
+            currentId++
+            itemsService.addItem(newItem)
+            dialog.dismiss()
+        }
+        dialogBinding.btnCancel.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialogBinding.etInputTitle.setOnClickListener {
+            dialogBinding.etInputTitle.text.clear()
+        }
+        dialogBinding.etInputAmount.setOnClickListener {
+            dialogBinding.etInputAmount.text.clear()
+        }
+        dialog.setContentView(dialogBinding.root)
+        dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.show()
     }
 
     private val itemListener: itemListener = {
@@ -97,5 +142,6 @@ class PurchasesActivity : AppCompatActivity() {
     companion object {
         @JvmStatic
         val IS_OPENED_KEY = "Been Opened"
+        val EXTRA_STATISCTICS_KEY = "Statistics Key"
     }
 }

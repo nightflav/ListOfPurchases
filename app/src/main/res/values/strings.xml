@@ -11,12 +11,20 @@
     <string name="add_one_item_description">Add One Item</string>
     <string name="amount_description">You have $v of $i</string>
     <string name="delete_icon_description">Delete An Item</string>
-    <string name="remove_one_item_descriprtion">Remove One Item</string>
+    <string name="remove_one_item_description">Remove One Item</string>
     <string name="single_item_amount_default_value">0</string>
     <string name="main_title">Shopping List</string>
     <string name="bottom_nav_menu_shopping_bag_icon">Shopping List</string>
     <string name="statistics_bot_nav_menu">Statistics</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="statistics_filling_text">Some Stats Here</string>
+    <string name="statistics_filling_text">Nothing Here</string>
+    <string name="fragment_enter_title">Enter title</string>
+    <string name="fragment_enter_price">Enter amount</string>
+    <string name="fragment_title_here">Title here</string>
+    <string name="fragment_amount_here">Amount here</string>
+    <string name="fragment_add">Add</string>
+    <string name="fragment_cancel">Cancel</string>
+    <string name="title_default_value">Title</string>
+    <string name="amount_default_value">0</string>
 </resources>
