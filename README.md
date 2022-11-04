@@ -7,7 +7,8 @@ Main Screen:
 
 Statistic screen (will be implemented later):
 
-binding.navigationBottom.selectedItemId = R.id.list_of_purchases;
+![image](https://user-images.githubusercontent.com/112074809/199872583-224c2ae7-9bdb-41d6-9c30-11c7509525cc.png)
+
 
 I used:
 
